@@ -6,12 +6,10 @@ export default function Main() {
 	const [time, setTime] = useState('00:00')
 
 	useEffect(() => {
-		const date = new Date()
-		setTime(`${date.getHours()}:${date.getMinutes()}`)
+		setTime(`${moment().format('hh:mm')}`)
 
 		setInterval(() => {
-			const date = new Date()
-			setTime(`${date.getHours()}:${date.getMinutes()}`)
+			setTime(`${moment().format('hh:mm')}`)
 		}, 5000)
 	}, [])
 
