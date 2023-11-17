@@ -1,4 +1,5 @@
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded'
+import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 import styles from './Main.module.scss'
 
@@ -17,7 +18,7 @@ export default function Main() {
 		<>
 			<div className={styles.weather}>
 				<div className={styles.generaly}>
-					<div className={styles.tempature}></div>
+					<div className={styles.tempature}>11 °C</div>
 					<div className={styles.weatherdisplay}>
 						<CloudRoundedIcon
 							sx={{ color: 'white', fontSize: '15rem' }}

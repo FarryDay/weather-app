@@ -3,8 +3,7 @@ import { Search } from '@mui/icons-material'
 import FormControl from '@mui/material/FormControl'
 import Input from '@mui/material/Input'
 import InputAdornment from '@mui/material/InputAdornment'
-import moment from 'moment/moment'
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const SearchInput = styled(Input)({
 	color: 'white',
@@ -16,24 +15,43 @@ const SearchInput = styled(Input)({
 export default function Header() {
 	const [value, setValue] = useState('')
 
-	console.log(moment().format('hh:mm'))
+	useEffect(() => {
+		fetchData('Тетюши').then(data => {
+			console.log(data)
+		})
+	}, [])
+
+	async function saveData(data) {
+		window.store.dispatch({
+			type: 'SET_WEATHER',
+			data: {
+				temp: `${data.current.feelslike_c} °C`,
+				location: `${data.location.name},${data.location.country}`,
+				humidity: `${data.current.humidity}%`,
+				pressure: `${data.current.pressure_mb} Mb`,
+				wind: `${data.current.wind_kph} Km/ Hr`,
+				forecastDays: data.forecast.forecastday,
+			},
+		})
+	}
 
 	// window.store.dispatch({ type: 'SET_WEATHER', data: { temp: 100 } })
 	// console.log(window.store.getState())
 
-	async function fetchData() {
+	async function fetchData(query = value) {
 		const URL = `http://api.weatherapi.com/v1/forecast.json?key=${
 			import.meta.env.VITE_API_KEY
-		}&q=${value}&days=7&aqi=yes&alerts=yes`
+		}&q=${query}&days=7&aqi=yes&alerts=yes`
 
 		const response = await fetch(URL)
 		const data = await response.json()
-		console.log(data)
+		return data
 	}
 
-	function onPress(event) {
+	async function onPress(event) {
 		if (event.key !== 'Enter') return
-		fetchData()
+		const data = await fetchData()
+		console.log(data)
 	}
 	return (
 		<div>

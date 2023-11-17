@@ -8,10 +8,24 @@
 	.generaly {
 		background-color: rgba(31, 31, 31, 0.331);
 		width: 70%;
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+
+		.tempature {
+			width: 48%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
 
 		.weatherdisplay {
-			float: right;
-			margin: 0rem 6rem;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			width: 48%;
 
 			.clock {
 				color: white;
