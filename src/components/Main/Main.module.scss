@@ -1,3 +1,4 @@
+
 .weather{
   .generaly{
     background-color: rgba(31, 31, 31, 0.331);
@@ -6,3 +7,22 @@
     background-color: rgba(31, 31, 31, 0.331);
   }
 }
+.weather {
+	display: flex;
+	gap: 20px;
+	flex: 3;
+
+	.generaly {
+		background-color: rgba(31, 31, 31, 0.331);
+		width: 70%;
+		.weatherdisplay{
+			float: right;
+			margin: 0rem 6rem;
+		}
+	}
+	.secondary {
+		width: 30%;
+		background-color: rgba(31, 31, 31, 0.331);
+	}
+}
+
