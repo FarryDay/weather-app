@@ -14,8 +14,7 @@ let weatherState = {
 const store = createStore((state = weatherState, action) => {
 	switch (action.type) {
 		case 'SET_WEATHER': {
-			console.log(data)
-			return { ...state, temp }
+			return { ...state, ...action.data }
 		}
 		default:
 			return state

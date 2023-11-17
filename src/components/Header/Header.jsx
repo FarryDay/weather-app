@@ -51,7 +51,7 @@ export default function Header() {
 	async function onPress(event) {
 		if (event.key !== 'Enter') return
 		const data = await fetchData()
-		console.log(data)
+		saveData(data)
 	}
 	return (
 		<div>
