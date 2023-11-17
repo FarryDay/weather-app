@@ -19,8 +19,9 @@ export default function Main() {
 					<div className={styles.tempature}></div>
 					<div className={styles.weatherdisplay}>
 						<WeatheIcon sx={{ color: 'white', fontSize: '15rem' }}></WeatheIcon>
-						<Clock/>
+						<Clock />
 					</div>
+					<div className={styles.secondary}></div>
 				</div>
 			</div>
 		</>
