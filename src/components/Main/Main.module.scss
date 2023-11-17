@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 .weather{
   .generaly{
     background-color: rgba(31, 31, 31, 0.331);
@@ -19,6 +19,9 @@
 			float: right;
 			margin: 0rem 6rem;
 			.clock{
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+
 			}
 		}
 	}

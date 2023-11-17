@@ -5,7 +5,7 @@ import { colors } from '@mui/material'
 const Clock = () =>{
 	const clock = new Date()
 	const time = clock.getHours() + ':' + clock.getMinutes()
-	return <h1 className={styles.clock}>{time}</h1>
+	return <h1 className={styles.clock}>{time}PM</h1>
 }
 import React, { useEffect, useState } from 'react'
 import styles from './Main.module.scss'
