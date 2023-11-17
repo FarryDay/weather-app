@@ -15,8 +15,8 @@ const SearchInput = styled(Input)({
 export default function Header() {
 	const [value, setValue] = useState('')
 
-	window.store.dispatch({ type: 'SET_WEATHER', data: { temp: 100 } })
-	console.log(window.store.getState())
+	// window.store.dispatch({ type: 'SET_WEATHER', data: { temp: 100 } })
+	// console.log(window.store.getState())
 
 	async function fetchData() {
 		const URL = `http://api.weatherapi.com/v1/forecast.json?key=${
@@ -25,6 +25,7 @@ export default function Header() {
 
 		const response = await fetch(URL)
 		const data = await response.json()
+		console.log(data)
 	}
 
 	function onPress(event) {
