@@ -13,6 +13,10 @@
 		gap: 10px;
 
 		.tempature {
+			color:white;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 7rem;
+			font-weight: bold;
 			width: 48%;
 			display: flex;
 			justify-content: center;
@@ -38,5 +42,28 @@
 	.secondary {
 		width: 30%;
 		background-color: rgba(31, 31, 31, 0.331);
+		.secondaryindicators{
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			p{
+				gap: 1rem;
+				font-size: 20px;
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+			}
+		}
+		.secondaryinfo {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			height: 73%;
+			h1{
+				color: white;
+				font-size: 20px;
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+			}
+		}
 	}
 }

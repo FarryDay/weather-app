@@ -21,12 +21,20 @@ export default function Main() {
 					<div className={styles.tempature}>11 °C</div>
 					<div className={styles.weatherdisplay}>
 						<CloudRoundedIcon
-							sx={{ color: 'white', fontSize: '15rem' }}
-						></CloudRoundedIcon>
+							sx={{ color: 'white', fontSize: '15rem' }}></CloudRoundedIcon>
 						<h1 className={styles.clock}>{time}</h1>
 					</div>
 				</div>
-				<div className={styles.secondary}></div>
+				<div className={styles.secondary}>
+					<div className={styles.secondaryindicators}>
+						<p>Влажность:</p>
+						<p>Давление:</p>
+						<p>Ветер:</p>
+					</div>
+					<div className={styles.secondaryinfo}>
+						<h1>info</h1>
+					</div>
+				</div>
 			</div>
 		</>
 	)
