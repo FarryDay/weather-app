@@ -23,7 +23,7 @@ export default function Main() {
 						<CloudRoundedIcon
 							sx={{ color: 'white', fontSize: '15rem' }}
 						></CloudRoundedIcon>
-						<h1 className={styles.clock}></h1>
+						<h1 className={styles.clock}>{time}</h1>
 					</div>
 				</div>
 				<div className={styles.secondary}></div>

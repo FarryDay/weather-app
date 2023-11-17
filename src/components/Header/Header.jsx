@@ -17,7 +17,7 @@ export default function Header() {
 
 	useEffect(() => {
 		fetchData('Тетюши').then(data => {
-			console.log(data)
+			saveData(data)
 		})
 	}, [])
 
