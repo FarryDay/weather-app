@@ -14,6 +14,12 @@ const SearchInput = styled(Input)({
 
 export default function Header() {
 	const [value, setValue] = useState('')
+
+	function onPress(event) {
+		if (event.key !== 'Enter') return
+
+		console.log('TODO FETCH API')
+	}
 	return (
 		<div>
 			<FormControl variant='standard'>
@@ -21,12 +27,13 @@ export default function Header() {
 					id='search'
 					placeholder='Change city'
 					value={value}
-					onChange={(e, value) => setValue(() => value)}
+					onChange={e => setValue(e.target.value)}
 					startAdornment={
 						<InputAdornment position='start'>
 							<Search sx={{ color: 'white' }} />
 						</InputAdornment>
 					}
+					onKeyDown={onPress}
 				/>
 			</FormControl>
 		</div>
