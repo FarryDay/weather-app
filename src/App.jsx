@@ -1,10 +1,14 @@
 import './App.module.scss'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
 
 function App() {
 	return (
-		<>
-			<h1>Weather App</h1>
-		</>
+		<main>
+			<Header />
+			<Main />
+			<Footer />
+		</main>
 	)
 }
 
