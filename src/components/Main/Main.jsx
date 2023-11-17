@@ -1,5 +1,3 @@
-import React from 'react'
-import styles from './Main.module.scss'
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded'
 import styled from '@emotion/styled'
 import { colors } from '@mui/material'
@@ -9,7 +7,18 @@ const Clock = () =>{
 	const time = clock.getHours() + ':' + clock.getMinutes()
 	return <h1 className={styles.clock}>{time}</h1>
 }
+import React, { useEffect, useState } from 'react'
+import styles from './Main.module.scss'
 export default function Main() {
+	const [time, setTime] = useState('00:00')
+
+	useEffect(() => {
+		setInterval(() => {
+			const date = new Date()
+			setTime(`${date.getHours()}:${date.getMinutes()}`)
+		}, 5000)
+	}, [])
+
 	return (
 		<>
 			<div className={styles.weather}>
