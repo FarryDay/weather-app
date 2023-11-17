@@ -6,16 +6,23 @@
   .secondary{
     background-color: rgba(31, 31, 31, 0.331);
   }
+.weather {
+	.generaly {
+		background-color: rgba(31, 31, 31, 0.331);
+	}
+	.secondary {
+		background-color: rgba(31, 31, 31, 0.331);
+	}
 }
 .weather {
 	display: flex;
 	gap: 20px;
-	flex: 3;
+	flex: 5;
 
 	.generaly {
 		background-color: rgba(31, 31, 31, 0.331);
 		width: 70%;
-		.weatherdisplay{
+		.weatherdisplay {
 			float: right;
 			margin: 0rem 6rem;
 			.clock{
@@ -30,4 +37,4 @@
 		background-color: rgba(31, 31, 31, 0.331);
 	}
 }
-
+}
