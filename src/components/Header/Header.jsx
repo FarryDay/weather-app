@@ -3,6 +3,7 @@ import { Search } from '@mui/icons-material'
 import FormControl from '@mui/material/FormControl'
 import Input from '@mui/material/Input'
 import InputAdornment from '@mui/material/InputAdornment'
+import moment from 'moment/moment'
 import React, { useState } from 'react'
 
 const SearchInput = styled(Input)({
@@ -14,6 +15,8 @@ const SearchInput = styled(Input)({
 
 export default function Header() {
 	const [value, setValue] = useState('')
+
+	console.log(moment().format('hh:mm'))
 
 	// window.store.dispatch({ type: 'SET_WEATHER', data: { temp: 100 } })
 	// console.log(window.store.getState())
