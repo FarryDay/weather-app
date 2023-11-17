@@ -15,10 +15,18 @@ const SearchInput = styled(Input)({
 export default function Header() {
 	const [value, setValue] = useState('')
 
+	async function fetchData() {
+		const URL = `http://api.weatherapi.com/v1/forecast.json?key=${
+			import.meta.env.VITE_API_KEY
+		}&q=${value}&days=7&aqi=yes&alerts=yes`
+
+		const response = await fetch(URL)
+		const data = await response.json()
+	}
+
 	function onPress(event) {
 		if (event.key !== 'Enter') return
-
-		console.log('TODO FETCH API')
+		fetchData()
 	}
 	return (
 		<div>
