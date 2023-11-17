@@ -1,0 +1,15 @@
+.weather{
+  display: flex;
+  margin: 1rem 1rem;
+  .generaly{
+    width: 240px;
+    height: 135px;
+    background-color: rgba(31, 31, 31, 0.331);
+    margin: 0rem 1rem;
+  }
+  .secondary{
+    width: 240px;
+    height: 135px;
+    background-color: rgba(31, 31, 31, 0.331);
+  }
+}
