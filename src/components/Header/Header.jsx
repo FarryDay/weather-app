@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import React, { useState } from 'react'
 
 const SearchInput = styled(Input)({
+	color: 'white',
 	'&.MuiInput-root::after': {
 		borderColor: 'white',
 	},
@@ -23,7 +24,7 @@ export default function Header() {
 					onChange={(e, value) => setValue(() => value)}
 					startAdornment={
 						<InputAdornment position='start'>
-							<Search />
+							<Search sx={{ color: 'white' }} />
 						</InputAdornment>
 					}
 				/>
