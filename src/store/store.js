@@ -2,6 +2,8 @@ import { createStore } from 'redux'
 
 let weatherState = {
 	temp: 0,
+	location: '',
+	humidity: 0,
 }
 
 // Create a Redux store holding the state of your app.
