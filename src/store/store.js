@@ -4,6 +4,9 @@ let weatherState = {
 	temp: 0,
 	location: '',
 	humidity: 0,
+	pressure: 0,
+	wind: 0,
+	forecastDays: [],
 }
 
 // Create a Redux store holding the state of your app.
