@@ -13,6 +13,9 @@ export default function Main() {
 	const [time, setTime] = useState('00:00')
 
 	useEffect(() => {
+		const date = new Date()
+		setTime(`${date.getHours()}:${date.getMinutes()}`)
+
 		setInterval(() => {
 			const date = new Date()
 			setTime(`${date.getHours()}:${date.getMinutes()}`)
