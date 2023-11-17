@@ -2,12 +2,15 @@ import styled from '@emotion/styled'
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded'
 import React from 'react'
 import styles from './Main.module.scss'
+
 const Clock = () => {
 	const clock = new Date()
 	const time = clock.getHours() + ':' + clock.getMinutes()
 	return <h1>{time}</h1>
 }
+
 const WeatheIcon = styled(CloudRoundedIcon)({})
+
 export default function Main() {
 	return (
 		<>
