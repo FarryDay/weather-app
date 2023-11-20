@@ -75,18 +75,28 @@
 		}
 		.secondaryinfo {
 			display: flex;
-    	justify-content: center;
-    	flex-wrap: wrap;
-    	align-content: space-evenly;
-    	width: 28%;
-    	height: 33%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			height: 50%;
 			h1{
+				
 				color: white;
 				font-size: 20px;
 				color: white;
 				font-family: 'Montserrat', sans-serif;
+			}	
+			p{
+				color: white;
+				font-size: 20px;
 			}
-
+			/* .textinfo{
+				display: flex;
+				p{
+					font-size: 20px;
+					/* width: 350px; */
+					color: white;
+					font-family: 'Montserrat', sans-serif;
+				} 
+			}
 		}
-	}
-}
