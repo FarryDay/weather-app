@@ -34,7 +34,6 @@ export default function Header() {
 	}, [])
 
 	async function saveData(data) {
-		console.log(data)
 		window.store.dispatch({
 			type: 'SET_WEATHER',
 			data: {
