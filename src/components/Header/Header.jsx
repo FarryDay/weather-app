@@ -15,10 +15,23 @@ const SearchInput = styled(Input)({
 export default function Header() {
 	const [value, setValue] = useState('')
 
+	const getLocation = async () => {
+		const response = await fetch('http://ip-api.com/json/?lang=ru')
+		const data = await response.json()
+		if (data?.city) {
+			console.log(data)
+			fetchData(data.city).then(data => {
+				saveData(data)
+			})
+		} else {
+			fetchData('Тетюши').then(data => {
+				saveData(data)
+			})
+		}
+	}
+
 	useEffect(() => {
-		fetchData('Тетюши').then(data => {
-			saveData(data)
-		})
+		getLocation()
 	}, [])
 
 	async function saveData(data) {
@@ -34,9 +47,6 @@ export default function Header() {
 			},
 		})
 	}
-
-	// window.store.dispatch({ type: 'SET_WEATHER', data: { temp: 100 } })
-	// console.log(window.store.getState())
 
 	async function fetchData(query = value) {
 		const URL = `http://api.weatherapi.com/v1/forecast.json?key=${
