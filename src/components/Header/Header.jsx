@@ -58,7 +58,7 @@ export default function Header() {
 			<FormControl variant='standard'>
 				<SearchInput
 					id='search'
-					placeholder='Change city'
+					placeholder='Введи город'
 					value={value}
 					onChange={e => setValue(e.target.value)}
 					startAdornment={
