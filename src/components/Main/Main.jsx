@@ -1,7 +1,6 @@
-import CloudRoundedIcon from '@mui/icons-material/CloudRounded'
 import moment from 'moment'
-import React, { useEffect, useState } from 'react'
 import 'moment/locale/ru'
+import React, { useEffect, useState } from 'react'
 import styles from './Main.module.scss'
 export default function Main() {
 	const [time, setTime] = useState('00:00')
@@ -19,6 +18,7 @@ export default function Main() {
 		}, 5000)
 	}, [])
 
+	console.log(weatherData)
 	return (
 		<>
 			<div className={styles.weather}>
@@ -29,8 +29,16 @@ export default function Main() {
 						<p className={styles.date}>{date}</p>
 					</div>
 					<div className={styles.weatherdisplay}>
-						{/* <CloudRoundedIcon
-							sx={{ color: 'white', fontSize: '15rem' }}></CloudRoundedIcon> */}
+						<div className={styles.condition}>
+							<img
+								src={weatherData.condition?.icon}
+								width='128px'
+								alt={weatherData.condition?.text}
+							/>
+							<h2 className={styles.conditionText}>
+								{weatherData.condition?.text}
+							</h2>
+						</div>
 						<h1 className={styles.clock}>{time}</h1>
 					</div>
 				</div>
@@ -48,9 +56,14 @@ export default function Main() {
 					</div>
 					<div className={styles.secondaryinfo}>
 						<h1>Информация о погоде</h1>
-						{<p>
-							Тетюши, солнце в этот день будет редко показываться из-за облаков. Пойдет дождь, который должен утихнуть к вечеру и закончиться к  вечеру и всё будет окей не парьтесь всё будет хорошо
-						</p>}
+						{
+							<p>
+								Тетюши, солнце в этот день будет редко показываться из-за
+								облаков. Пойдет дождь, который должен утихнуть к вечеру и
+								закончиться к вечеру и всё будет окей не парьтесь всё будет
+								хорошо
+							</p>
+						}
 					</div>
 				</div>
 			</div>

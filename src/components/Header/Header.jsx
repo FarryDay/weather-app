@@ -19,7 +19,6 @@ export default function Header() {
 		const response = await fetch('http://ip-api.com/json/?lang=ru')
 		const data = await response.json()
 		if (data?.city) {
-			console.log(data)
 			fetchData(data.city).then(data => {
 				saveData(data)
 			})
@@ -35,6 +34,7 @@ export default function Header() {
 	}, [])
 
 	async function saveData(data) {
+		console.log(data)
 		window.store.dispatch({
 			type: 'SET_WEATHER',
 			data: {
@@ -44,6 +44,7 @@ export default function Header() {
 				pressure: `${data.current.pressure_mb} Mb`,
 				wind: `${data.current.wind_kph} Km/ Hr`,
 				forecastDays: data.forecast.forecastday,
+				condition: data.current.condition,
 			},
 		})
 	}
@@ -51,7 +52,7 @@ export default function Header() {
 	async function fetchData(query = value) {
 		const URL = `http://api.weatherapi.com/v1/forecast.json?key=${
 			import.meta.env.VITE_API_KEY
-		}&q=${query}&days=7&aqi=yes&alerts=yes`
+		}&q=${query}&days=7&aqi=yes&alerts=yes&lang=ru`
 
 		const response = await fetch(URL)
 		const data = await response.json()
