@@ -18,7 +18,6 @@ export default function Main() {
 		}, 5000)
 	}, [])
 
-	console.log(weatherData)
 	return (
 		<>
 			<div className={styles.weather}>
